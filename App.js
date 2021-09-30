@@ -24,7 +24,12 @@ const Tab = createBottomTabNavigator();
 
 function Home() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      activeColor="#f0edf6"
+      inactiveColor="#95a5a6"
+      screenOptions={{
+        tabBarStyle: {backgroundColor: '#1B1C2A'},
+      }}>
       <Tab.Screen
         name="HomeScreen"
         component={HomeScreen}
