@@ -7,18 +7,12 @@
  */
 
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {Image} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
-function HomeScreen() {
-  return (
-    <View style={styles.testScreen}>
-      <Text>Home Screen test</Text>
-    </View>
-  );
-}
+import Movies from './src/components/home';
+import Details from './src/components/details';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,7 +26,7 @@ function Home() {
       }}>
       <Tab.Screen
         name="HomeScreen"
-        component={HomeScreen}
+        component={Movies}
         options={{
           headerShown: false,
           tabBarLabel: 'Home',
@@ -58,35 +52,12 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  testScreen: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default App;
