@@ -13,6 +13,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Movies from './src/components/home';
 import Details from './src/components/details';
+import SplashScreen from 'react-native-splash-screen';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,6 +49,9 @@ function Home() {
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  React.useEffect(() => {
+    SplashScreen.hide();
+  });
   // const isDarkMode = useColorScheme() === 'dark';
 
   return (
