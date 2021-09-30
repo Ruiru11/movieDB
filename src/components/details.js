@@ -21,7 +21,7 @@ const Details = ({route, navigation}) => {
   const getTrending = () => {
     setLoading(true);
     axios
-      .get('https://imdb-api.com/en/API/InTheaters/k_mtd394sq')
+      .get('https://imdb-api.com/en/API/InTheaters/k_z6lalr8i')
       .then(res => {
         console.log('resre', res);
         setShows(res.data.items);

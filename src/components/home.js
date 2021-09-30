@@ -18,7 +18,7 @@ function Movies({navigation}) {
   const getDATA = () => {
     setLoading(true);
     axios
-      .get('https://imdb-api.com/en/API/MostPopularMovies/k_mtd394sq')
+      .get('https://imdb-api.com/en/API/MostPopularMovies/k_z6lalr8i')
       .then(res => {
         setData(res.data.items);
         setLoading(false);
