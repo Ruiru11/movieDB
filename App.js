@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -31,6 +31,15 @@ function Home() {
         options={{
           headerShown: false,
           tabBarLabel: 'Home',
+          tabBarIcon: () => (
+            <Image
+              source={require('./assets/home.png')}
+              // eslint-disable-next-line react-native/no-inline-styles
+              style={{height: 25, width: 25, tintColor: 'white'}}
+            />
+          ),
+
+          tabBarShowLabel: false,
         }}
       />
     </Tab.Navigator>
